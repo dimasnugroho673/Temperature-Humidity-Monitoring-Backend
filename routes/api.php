@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MonitoringController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/temperatures', [MonitoringController::class, 'index']);
+
+Route::get('/temperature/latest', [MonitoringController::class, 'latest']);
+
+Route::post('/temperature', [MonitoringController::class, 'store']);
