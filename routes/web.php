@@ -17,3 +17,13 @@ Route::get('/', function () {
     phpinfo();
     // return view('welcome');
 });
+
+
+Route::get('/test', function () {
+    return "hello";
+    // return view('welcome');
+});
+
+Route::get('/dumpdb', function () {
+    return view('dumpdb');
+});

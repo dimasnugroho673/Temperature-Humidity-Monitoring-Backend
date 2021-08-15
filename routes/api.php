@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\MonitoringController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,9 @@ Route::get('/temperatures', [MonitoringController::class, 'index']);
 Route::get('/temperature/latest', [MonitoringController::class, 'latest']);
 
 Route::post('/temperature', [MonitoringController::class, 'store']);
+
+Route::get('/temperature/store-get', [MonitoringController::class, 'storeWithGet']);
+
+Route::post('/device', [DeviceController::class, 'store']);
+
+Route::get('/config', [MonitoringController::class, 'config']);
